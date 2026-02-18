@@ -1,0 +1,240 @@
+# 🚀 DEVOPS COMPLETE CHEATSHEET
+Author: Tharusha Bhashitha  
+Track: DevOps / Cloud Engineer  
+
+# 1️⃣ GIT SETUP
+
+git --version
+git config --global user.name "Tharusha Bhashitha"
+git config --global user.email "ntb069@gmail.com"
+git config --list
+
+---
+
+# 2️⃣ INITIALIZE REPOSITORY
+
+git init
+git clone https://github.com/username/repo.git
+
+---
+
+# 3️⃣ BASIC WORKFLOW# 🚀 DEVOPS COMPLETE CHEATSHEET
+Author: Tharusha Bhashitha  
+Track: DevOps / Cloud Engineer  
+
+# 1️⃣ GIT SETUP
+
+git --version
+git config --global user.name "Tharusha Bhashitha"
+git config --global user.email "ntb069@gmail.com"
+git config --list
+
+---
+
+# 2️⃣ INITIALIZE REPOSITORY
+
+git init
+git clone https://github.com/username/repo.git
+
+---
+
+# 3️⃣ BASIC WORKFLOW
+
+git status
+git add file.txt
+git add .
+git commit -m "Initial commit"
+git log
+git log --oneline
+git diff
+
+---
+
+# 4️⃣ BRANCHING
+
+git branch
+git branch feature-branch
+git checkout feature-branch
+git checkout -b new-branch
+git switch branch-name
+git branch -d branch-name
+git branch -D branch-name
+
+---
+
+# 5️⃣ MERGING
+
+git merge branch-name
+git merge --no-ff branch-name
+
+---
+
+# 6️⃣ REMOTE REPOSITORY
+
+git remote -v
+git remote add origin https://github.com/user/repo.git
+git push -u origin main
+git push
+git pull
+git fetch
+git pull origin main
+
+---
+
+# 7️⃣ STASHING
+
+git stash
+git stash list
+git stash apply
+git stash pop
+git stash drop
+
+---
+
+# 8️⃣ RESET & REVERT
+
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+git revert commit_id
+
+---
+
+# 9️⃣ TAGGING
+
+git tag
+git tag v1.0
+git tag -a v1.0 -m "Release version 1.0"
+git push origin v1.0
+
+---
+
+# 🔟 REBASE (ADVANCED)
+
+git rebase main
+git rebase -i HEAD~3
+
+---
+
+# 1️⃣1️⃣ CHERRY PICK
+
+git cherry-pick commit_id
+
+---
+
+# 1️⃣2️⃣ DELETE FILES
+
+git rm file.txt
+git rm -r folder/
+
+---
+
+# 1️⃣3️⃣ CLEAN
+
+git clean -n
+git clean -f
+
+---
+
+# 1️⃣4️⃣ VIEW HISTORY GRAPH
+
+git log --graph --oneline --all
+
+
+git status
+git add file.txt
+git add .
+git commit -m "Initial commit"
+git log
+git log --oneline
+git diff
+
+---
+
+# 4️⃣ BRANCHING
+
+git branch
+git branch feature-branch
+git checkout feature-branch
+git checkout -b new-branch
+git switch branch-name
+git branch -d branch-name
+git branch -D branch-name
+
+---
+
+# 5️⃣ MERGING
+
+git merge branch-name
+git merge --no-ff branch-name
+
+---
+
+# 6️⃣ REMOTE REPOSITORY
+
+git remote -v
+git remote add origin https://github.com/user/repo.git
+git push -u origin main
+git push
+git pull
+git fetch
+git pull origin main
+
+---
+
+# 7️⃣ STASHING
+
+git stash
+git stash list
+git stash apply
+git stash pop
+git stash drop
+
+---
+
+# 8️⃣ RESET & REVERT
+
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+git revert commit_id
+
+---
+
+# 9️⃣ TAGGING
+
+git tag
+git tag v1.0
+git tag -a v1.0 -m "Release version 1.0"
+git push origin v1.0
+
+---
+
+# 🔟 REBASE (ADVANCED)
+
+git rebase main
+git rebase -i HEAD~3
+
+---
+
+# 1️⃣1️⃣ CHERRY PICK
+
+git cherry-pick commit_id
+
+---
+
+# 1️⃣2️⃣ DELETE FILES
+
+git rm file.txt
+git rm -r folder/
+
+---
+
+# 1️⃣3️⃣ CLEAN
+
+git clean -n
+git clean -f
+
+---
+
+# 1️⃣4️⃣ VIEW HISTORY GRAPH
+
+git log --graph --oneline --all
