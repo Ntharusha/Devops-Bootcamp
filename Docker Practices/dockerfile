@@ -1,1 +1,274 @@
+# 🐳 DOCKER COMPLETE DEVOPS CHEATSHEET
+Author: Tharusha Bhashitha  
+Level: DevOps Engineer Track  
 
+---
+
+# 1️⃣ DOCKER BASIC COMMANDS
+
+## Check Installation
+docker --version
+docker version
+docker info
+docker help
+
+---
+
+# 2️⃣ DOCKER IMAGES
+
+## List Images
+docker images
+docker image ls
+
+## Pull Image
+docker pull nginx
+docker pull ubuntu:22.04
+
+## Build Image
+docker build -t myapp:1.0 .
+docker build -f Dockerfile.dev -t myapp .
+
+## Tag Image
+docker tag myapp:1.0 myrepo/myapp:latest
+
+## Remove Image
+docker rmi nginx
+docker image rm nginx
+
+## Remove Unused Images
+docker image prune
+docker image prune -a
+
+---
+
+# 3️⃣ DOCKER CONTAINERS
+
+## Run Container
+docker run nginx
+docker run -d nginx
+docker run -it ubuntu bash
+docker run -p 8080:80 nginx
+docker run --name mynginx -d nginx
+
+## List Containers
+docker ps
+docker ps -a
+
+## Stop Container
+docker stop container_id
+
+## Start Container
+docker start container_id
+
+## Restart Container
+docker restart container_id
+
+## Remove Container
+docker rm container_id
+docker rm -f container_id
+
+---
+
+# 4️⃣ LOGS & DEBUGGING
+
+docker logs container_id
+docker logs -f container_id
+docker inspect container_id
+docker top container_id
+docker stats
+
+---
+
+# 5️⃣ EXEC INTO CONTAINER
+
+docker exec -it container_id bash
+docker exec -it container_id sh
+
+---
+
+# 6️⃣ DOCKER VOLUMES
+
+## Create Volume
+docker volume create myvolume
+
+## List Volumes
+docker volume ls
+
+## Inspect Volume
+docker volume inspect myvolume
+
+## Remove Volume
+docker volume rm myvolume
+
+## Prune Volumes
+docker volume prune
+
+## Mount Volume
+docker run -v myvolume:/data nginx
+docker run -v $(pwd):/app nginx
+
+---
+
+# 7️⃣ DOCKER NETWORKS
+
+## List Networks
+docker network ls
+
+## Create Network
+docker network create mynetwork
+
+## Inspect Network
+docker network inspect mynetwork
+
+## Remove Network
+docker network rm mynetwork
+
+## Connect Container to Network
+docker network connect mynetwork container_id
+
+---
+
+# 8️⃣ SYSTEM CLEANUP
+
+docker system df
+docker system prune
+docker system prune -a
+docker container prune
+docker network prune
+
+---
+
+# 9️⃣ DOCKER HUB
+
+docker login
+docker logout
+docker push myrepo/myapp:latest
+
+---
+
+# 🔟 DOCKERFILE INSTRUCTIONS
+
+FROM
+RUN
+CMD
+ENTRYPOINT
+WORKDIR
+COPY
+ADD
+EXPOSE
+ENV
+ARG
+LABEL
+USER
+VOLUME
+
+## Example Dockerfile
+
+FROM node:18
+WORKDIR /app
+COPY package*.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+
+---
+
+# 1️⃣1️⃣ MULTI-STAGE BUILD (PRODUCTION)
+
+FROM node:18 as builder
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+FROM nginx:alpine
+COPY --from=builder /app/build /usr/share/nginx/html
+
+---
+
+# 1️⃣2️⃣ DOCKER COMPOSE
+
+## Start Services
+docker-compose up
+docker-compose up -d
+
+## Stop Services
+docker-compose down
+
+## Build Services
+docker-compose build
+
+## View Logs
+docker-compose logs
+docker-compose logs -f
+
+## Scale Services
+docker-compose up --scale web=3
+
+---
+
+## Example docker-compose.yml
+
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+  redis:
+    image: redis
+
+---
+
+# 1️⃣3️⃣ ADVANCED DOCKER
+
+## Resource Limits
+docker run -m 512m nginx
+docker run --cpus="1.5" nginx
+
+## Restart Policies
+docker run --restart always nginx
+docker run --restart unless-stopped nginx
+
+## Health Check
+docker run --health-cmd="curl -f http://localhost || exit 1" nginx
+
+---
+
+# 1️⃣4️⃣ SECURITY BASICS
+
+- Use official images
+- Use multi-stage builds
+- Avoid running as root
+- Use .dockerignore
+- Scan images using Trivy
+- Use minimal base images (alpine)
+
+---
+
+# 1️⃣5️⃣ DOCKER INTERVIEW QUESTIONS
+
+1. Difference between CMD and ENTRYPOINT?
+2. What is a Docker layer?
+3. What is multi-stage build?
+4. Difference between volume and bind mount?
+5. What is Docker networking bridge mode?
+6. How to reduce image size?
+7. What is Docker Compose?
+8. What is difference between container and VM?
+9. How to debug crashed container?
+10. What is Docker registry?
+
+---
+
+# 1️⃣6️⃣ REAL DEVOPS PROJECT IDEAS
+
+1. Dockerize a MERN stack app
+2. CI/CD pipeline with Jenkins + Docker
+3. Multi-container microservices setup
+4. Monitoring stack with Prometheus + Grafana
+5. Deploy Docker app to AWS ECS
+
+---
+
+# 🚀 END OF DOCKER COMPLETE FILE
